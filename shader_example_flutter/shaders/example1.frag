@@ -7,7 +7,8 @@ uniform vec2 u_resolution;
 out vec4 fragColor;         
 
 void main() {
-  vec3 color = vec3(gl_FragCoord.x, gl_FragCoord.y, abs(sin(u_time)));
+  vec2 st = gl_FragCoord.xy / u_resolution;  
+  vec3 color = vec3(st.x, st.y, abs(sin(u_time)));
   fragColor = vec4(color, 1.0);             
 }
 
